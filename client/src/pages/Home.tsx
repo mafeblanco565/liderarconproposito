@@ -232,7 +232,7 @@ export default function Home() {
         </FadeIn>
         <div className="knowledge-intro">
           <PillarImage className="pillar-image--saber" label="Composición abstracta que representa aprendizaje y conocimiento" />
-          <AnimatedText className="chapter-lead" text="La formación es más valiosa cuando amplía la capacidad de entender, decidir y crear mejores soluciones." />
+          <AnimatedText className="chapter-lead" text="La formación es más valiosa cuando amplía la capacidad de compartir conocimiento, crear soluciones y generar cambios que transformen realidades." />
         </div>
         <div className="knowledge-list">
           {knowledge.map((item, i) => (
