@@ -183,6 +183,7 @@ a { color: inherit; text-decoration: none; }
 .competencies > p { margin: 0; color: var(--mineral); font: 500 11px/1.2 "Kanit", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
 .competencies > div { display: grid; gap: 12px; }
 .competencies span { color: #d6e0e1; font: 500 clamp(19px, 2.2vw, 32px)/1.13 "Kanit", sans-serif; letter-spacing: -0.03em; }
+.competencies span u { text-decoration: underline; text-decoration-color: var(--mineral); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
 .site-footer { padding: clamp(60px, 9vw, 130px) clamp(18px, 7.2vw, 118px) 27px; background: #7ce0cd; color: #102321; }
 .footer-topline { display: flex; align-items: center; gap: 13px; color: #1b4d48; font: 500 11px/1 "Kanit", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
