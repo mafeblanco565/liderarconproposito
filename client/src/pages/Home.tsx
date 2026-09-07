@@ -321,7 +321,7 @@ export default function Home() {
           <article className="impact-card impact-card--achievement">
             <span className="card-label">Logro destacado</span>
             <strong>+20<span>%</span></strong>
-            <p>Incremento sostenido de ventas anuales entre 2020 y 2024, mediante la estandarización de procesos comerciales y una operación alineada a objetivos estratégicos.</p>
+            <p>Incremento sostenido de ventas anuales entre 2020 y 2024 logrado por mi equipo comercial en la franquicia Don Jacobo Barranquilla, mediante la estandarización de procesos comerciales y una operación alineada a objetivos estratégicos.</p>
             <div className="impact-card__footer">También se alcanzó <b>+100 %</b> en ventas con campañas estacionales.</div>
           </article>
           <article className="impact-card impact-card--challenge">
