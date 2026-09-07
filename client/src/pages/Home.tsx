@@ -156,22 +156,16 @@ export default function Home() {
       </header>
 
       <section id="inicio" className="hero" aria-labelledby="hero-title">
+        <div className="hero-bg" aria-hidden="true">
+          <HeroLoop />
+          <div className="hero-bg__veil" />
+        </div>
         <div className="hero-noise" />
-        <div className="hero-orbit hero-orbit--one" />
-        <div className="hero-orbit hero-orbit--two" />
         <FadeIn className="hero-topline" delay={0} y={-20}>
           <p>Dirección comercial · Desarrollo de negocios</p>
         </FadeIn>
         <FadeIn className="hero-stage" delay={0.15} y={40}>
-          <p className="hero-im">I&apos;m</p>
-          <h1 id="hero-title" className="hero-lockup">
-            <span className="hero-word">María</span>
-            {/* El video es decorativo: el nombre completo queda en el h1. */}
-            <span className="hero-video" aria-hidden="true">
-              <HeroLoop />
-            </span>
-            <span className="hero-word">Fernanda</span>
-          </h1>
+          <h1 id="hero-title" className="hero-lockup">I&apos;m María Fernanda</h1>
         </FadeIn>
         <div className="hero-bottom">
           <FadeIn as="p" className="hero-statement" delay={0.35} y={20}>
