@@ -68,6 +68,7 @@ const roles = [
     period: "Mar 2026 — Actualidad",
     location: "Bucaramanga",
     company: "Multicómputo · Multitech",
+    team: "3",
     role: "Directora Comercial de Alianzas Empresariales",
     bullets: [
       "Lidero la gestión de alianzas estratégicas B2G con entidades públicas para estructurar programas de formación técnica que impulsan la empleabilidad y el desarrollo social en poblaciones clave.",
@@ -79,6 +80,7 @@ const roles = [
     period: "Mar 2025 — Mar 2026",
     location: "Bucaramanga",
     company: "Camper País · Campuslands",
+    team: "1",
     role: "Directora Comercial",
     bullets: [
       "Construí y lideré la estrategia de atracción de aliados privados para patrocinar formación en desarrollo de software e IA, articulando empresas, fundaciones y territorios bajo marcos de beneficios tributarios e impacto social.",
@@ -101,6 +103,7 @@ const roles = [
     period: "Ago 2022 — Ene 2024",
     location: "Bucaramanga",
     company: "Industria de Alimentos Don Jacobo",
+    team: "70",
     role: "Directora Comercial y de Marketing Nacional",
     bullets: [
       "Dirigí, capacité y evalué un equipo comercial de 70 personas (líderes de zona, fuerza de ventas presencial, call center y marketing), con planeación trimestral basada en KPIs.",
@@ -291,7 +294,11 @@ export default function Home() {
         <StackingCards>
           {roles.map((role) => (
             <article className="timeline-item" key={`${role.company}-${role.period}`}>
-              <span className="timeline-period">{role.period}<i>{role.location}</i></span>
+              <span className="timeline-period">
+                {role.period}<i>{role.location}</i>
+                {/* Solo se muestra en los cargos con equipo a cargo declarado. */}
+                {role.team && <b className="timeline-team">Personas a cargo<em>{role.team}</em></b>}
+              </span>
               <div className="timeline-main"><p className="timeline-company">{role.company}</p><h3>{role.role}</h3></div>
               <ul className="timeline-bullets">
                 {role.bullets.map((punto) => <li key={punto}>{punto}</li>)}
