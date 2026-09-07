@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 /** El motor 3D se carga aparte: no debe bloquear el primer pintado del hero. */
 const AvatarStage = lazy(() => import("@/components/AvatarStage"));
+import PersonalVideo from "@/components/PersonalVideo";
 import AnimatedText from "@/components/motion/AnimatedText";
 import FadeIn from "@/components/motion/FadeIn";
 import Magnet from "@/components/motion/Magnet";
@@ -213,13 +214,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="personal-video" aria-label="Espacio para el video personal de María Fernanda">
+        <div className="personal-video" aria-label="Video personal de María Fernanda">
           <div className="personal-video__overlay" />
           <div className="personal-video__copy">
             <span className="video-label">Video personal</span>
-            <h3>UNA MIRADA MÁS<br />CERCA DE MÍ</h3>
+            <h3>MI<br />ESENCIA</h3>
             <p>Este espacio está preparado para compartir, en primera persona, mi historia, mis motivaciones y las experiencias que nutren mi manera de estar en el mundo.</p>
           </div>
+          <PersonalVideo />
         </div>
       </section>
 
