@@ -1,0 +1,8 @@
+# Normaliza finales de línea: LF en el repositorio, nativo en el disco.
+* text=auto eol=lf
+
+# Binarios: sin conversión ni diff textual.
+*.glb binary
+*.webp binary
+*.png binary
+*.jpg binary
