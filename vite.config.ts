@@ -18,14 +18,6 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
-    rollupOptions: {
-      output: {
-        // El motor 3D se aísla en su propio chunk para no bloquear el primer pintado.
-        manualChunks: {
-          three: ["three", "@react-three/fiber", "@react-three/drei"],
-        },
-      },
-    },
   },
   server: {
     port: 3000,

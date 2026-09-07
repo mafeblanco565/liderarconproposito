@@ -2,7 +2,7 @@
  * Estilo Materia en movimiento: capítulo editorial oscuro, tipografía monumental,
  * metal frío y menta mineral; contenido real de CV presentado en escenas narrativas.
  */
-import { lazy, Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -13,11 +13,9 @@ import {
   Menu,
   MoveRight,
   Phone,
-  Sparkles,
   X,
 } from "lucide-react";
-/** El motor 3D se carga aparte: no debe bloquear el primer pintado del hero. */
-const AvatarStage = lazy(() => import("@/components/AvatarStage"));
+import HeroLoop from "@/components/HeroLoop";
 import PersonalVideo from "@/components/PersonalVideo";
 import AnimatedText from "@/components/motion/AnimatedText";
 import FadeIn from "@/components/motion/FadeIn";
@@ -164,15 +162,17 @@ export default function Home() {
         <FadeIn className="hero-topline" delay={0} y={-20}>
           <p>Dirección comercial · Desarrollo de negocios</p>
         </FadeIn>
-        <FadeIn className="hero-title-wrap" delay={0.15} y={40}>
-          <p className="hero-kicker"><Sparkles size={14} /> Mi portafolio personal</p>
-          <h1 id="hero-title">MARÍA<br /><em>FERNANDA</em></h1>
+        <FadeIn className="hero-stage" delay={0.15} y={40}>
+          <p className="hero-im">I&apos;m</p>
+          <h1 id="hero-title" className="hero-lockup">
+            <span className="hero-word">María</span>
+            {/* El video es decorativo: el nombre completo queda en el h1. */}
+            <span className="hero-video" aria-hidden="true">
+              <HeroLoop />
+            </span>
+            <span className="hero-word">Fernanda</span>
+          </h1>
         </FadeIn>
-        <div className="hero-avatar-wrap">
-          <Suspense fallback={<div className="avatar-stage" aria-hidden="true" />}>
-            <AvatarStage />
-          </Suspense>
-        </div>
         <div className="hero-bottom">
           <FadeIn as="p" className="hero-statement" delay={0.35} y={20}>
             Conecto estrategia comercial, tecnología y relaciones de largo plazo para generar impacto.
