@@ -6,6 +6,9 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
+    // pnpm enlaza los paquetes por rutas reales distintas; sin dedupe, React
+    // puede acabar duplicado y los hooks de las librerías fallan.
+    dedupe: ["react", "react-dom"],
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
     },

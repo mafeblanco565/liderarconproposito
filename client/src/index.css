@@ -64,7 +64,7 @@ button:not(:disabled), a[href] { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 ::selection { background: var(--mineral); color: var(--graphite); }
 
-.portfolio-shell { overflow: clip; background: var(--graphite); }
+.portfolio-shell { overflow-x: clip; overflow-y: visible; background: var(--graphite); }
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px clamp(18px, 3.2vw, 52px); transition: background-color 220ms ease, backdrop-filter 220ms ease, border-color 220ms ease; border-bottom: 1px solid transparent; }
 .site-header--solid { background: rgba(12, 14, 16, 0.83); backdrop-filter: blur(15px); border-bottom-color: var(--hairline); }
 .brand-lockup { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--fog); text-align: left; font: 600 14px/0.93 "Kanit", sans-serif; letter-spacing: -0.01em; }
@@ -82,7 +82,6 @@ a { color: inherit; text-decoration: none; }
 .hero-orbit--two { width: min(54vw, 650px); height: min(54vw, 650px); top: 23%; left: 50%; transform: translateX(-50%); border-color: rgba(124, 224, 205, 0.14); }
 .hero-topline, .hero-bottom { position: relative; z-index: 3; display: flex; justify-content: space-between; gap: 24px; color: #bbcbcf; font: 500 clamp(10px, 0.78vw, 12px)/1.3 "Kanit", sans-serif; letter-spacing: 0.115em; text-transform: uppercase; }
 .hero-topline p, .hero-bottom p { margin: 0; }
-.availability-dot { display: inline-block; width: 6px; height: 6px; margin: 0 4px 1px; border-radius: 50%; background: var(--mineral); box-shadow: 0 0 10px rgba(124, 224, 205, 0.9); }
 .hero-title-wrap { position: relative; z-index: 2; margin-top: clamp(22px, 3.7vh, 40px); }
 .hero-kicker { display: flex; align-items: center; gap: 7px; margin: 0 0 7px 3px; color: var(--mineral); font: 500 clamp(11px, 0.9vw, 14px)/1 "Kanit", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; }
 .hero h1, .chapter h2, .site-footer h2 { margin: 0; color: transparent; font: 900 clamp(74px, 15.2vw, 242px)/0.71 "Kanit", sans-serif; letter-spacing: -0.085em; text-transform: uppercase; background: linear-gradient(180deg, #f3f6f5 0%, #b8c4ca 42%, #627078 100%); -webkit-background-clip: text; background-clip: text; }
@@ -90,14 +89,10 @@ a { color: inherit; text-decoration: none; }
 .hero-avatar-wrap { position: absolute; z-index: 1; inset: 15% 15% 7%; min-height: 470px; pointer-events: none; }
 .avatar-stage { width: 100%; height: 100%; min-height: 470px; pointer-events: auto; }
 .avatar-stage canvas { touch-action: none; }
-.avatar-stage__hint { position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; width: max-content; color: rgba(225, 238, 238, 0.68); font: 500 10px/1 "Kanit", sans-serif; letter-spacing: 0.13em; text-transform: uppercase; pointer-events: none; }
-.avatar-stage__hint span { width: 24px; height: 1px; background: var(--mineral); }
 .avatar-loading { display: block; width: max-content; color: var(--mineral); font: 500 10px/1 "Kanit", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; animation: breathe 1.3s ease-in-out infinite alternate; }
 .hero-bottom { align-items: end; }
 .hero-statement { max-width: 275px; font: 400 clamp(12px, 1vw, 15px)/1.5 "Manrope", sans-serif; letter-spacing: normal; text-transform: none; }
-.hero-scroll { display: inline-flex; align-items: center; gap: 11px; padding: 13px 16px; border: 1px solid rgba(238, 243, 243, 0.32); border-radius: 999px; color: var(--fog); background: rgba(15, 20, 21, 0.55); font: 500 11px/1 "Kanit", sans-serif; letter-spacing: 0.09em; text-transform: uppercase; transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease; }
-.hero-scroll:hover { border-color: var(--mineral); background: rgba(124, 224, 205, 0.12); transform: translateY(-2px); }
-.hero-scroll:active, .contact-orb:active { transform: scale(0.97); }
+.contact-orb:active { transform: scale(0.97); }
 .hero-mark { color: #708085; }
 
 .marquee-band { display: flex; overflow: hidden; padding: 22px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: #121719; }
@@ -114,7 +109,7 @@ a { color: inherit; text-decoration: none; }
 .section-label i { display: block; width: clamp(38px, 5vw, 76px); height: 1px; background: currentColor; opacity: 0.6; }
 .ser-grid { display: grid; grid-template-columns: minmax(240px, 0.92fr) minmax(320px, 1fr); align-items: center; gap: clamp(42px, 10vw, 180px); max-width: 1240px; margin: 0 auto; }
 .pillar-image { overflow: hidden; border-radius: 2px; background-position: center; background-repeat: no-repeat; background-size: cover; box-shadow: inset 0 0 0 1px rgba(229, 244, 244, 0.12); }
-.pillar-image--ser { min-height: clamp(375px, 45vw, 610px); background-image: linear-gradient(135deg, rgba(12, 14, 16, 0.08), rgba(12, 14, 16, 0.6)), url("/assets/saber-ser.webp"); }
+.pillar-image--ser { aspect-ratio: 768 / 1376; max-height: 860px; background-image: linear-gradient(135deg, rgba(12, 14, 16, 0.04), rgba(12, 14, 16, 0.34)), url("/assets/saber-ser.webp"); }
 .pillar-image--saber { min-height: 400px; background-image: linear-gradient(135deg, rgba(12, 14, 16, 0.15), rgba(12, 14, 16, 0.72)), url("/assets/saber-saber.webp"); }
 .pillar-image--hacer { min-height: 450px; background-image: linear-gradient(135deg, rgba(12, 14, 16, 0.13), rgba(12, 14, 16, 0.7)), url("/assets/saber-hacer.webp"); }
 .ser-content { max-width: 560px; }
@@ -127,11 +122,10 @@ a { color: inherit; text-decoration: none; }
 .personal-video { position: relative; display: flex; align-items: end; justify-content: space-between; min-height: min(47vw, 610px); margin-top: clamp(82px, 12vw, 175px); padding: clamp(26px, 4.8vw, 78px); overflow: hidden; border: 1px solid var(--hairline); background: radial-gradient(circle at 80% 25%, rgba(124, 224, 205, 0.18), transparent 23%), linear-gradient(110deg, #182021, #101516 70%); }
 .personal-video::after { content: "MFB"; position: absolute; right: -0.04em; bottom: -0.25em; color: rgba(201, 212, 220, 0.07); font: 900 clamp(170px, 34vw, 600px)/0.7 "Kanit", sans-serif; letter-spacing: -0.12em; }
 .personal-video__overlay { position: absolute; inset: 0; opacity: 0.24; background-image: linear-gradient(90deg, rgba(12, 14, 16, 0.76), transparent 70%), repeating-linear-gradient(90deg, transparent 0, transparent 49px, rgba(238, 243, 243, 0.08) 50px); }
-.personal-video__copy, .video-pending { position: relative; z-index: 1; }
+.personal-video__copy { position: relative; z-index: 1; }
 .personal-video__copy { max-width: 520px; }
 .personal-video h3 { margin: 0 0 16px; color: var(--fog); font: 700 clamp(44px, 7.2vw, 112px)/0.84 "Kanit", sans-serif; letter-spacing: -0.075em; }
 .personal-video p { max-width: 450px; margin: 0; color: #c2cfd0; font: 400 clamp(13px, 1.1vw, 16px)/1.65 "Manrope", sans-serif; }
-.video-pending { display: inline-flex; align-items: center; gap: 9px; padding: 12px 14px; border: 1px solid rgba(124, 224, 205, 0.45); color: var(--mineral); background: rgba(12, 14, 16, 0.4); font: 500 10px/1 "Kanit", sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
 
 .chapter--saber { color: #172020; background: #e7eeed; }
 .chapter--saber .chapter-heading h2 { background: linear-gradient(180deg, #263438 0%, #75878c 72%, #a5b3b5 100%); -webkit-background-clip: text; background-clip: text; }
@@ -189,12 +183,22 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes breathe { to { opacity: 0.36; } }
-@media (prefers-reduced-motion: no-preference) {
-  .hero-title-wrap { animation: emerge 700ms cubic-bezier(0.23, 1, 0.32, 1) both; }
-  .hero-topline { animation: emerge 700ms 100ms cubic-bezier(0.23, 1, 0.32, 1) both; }
-  .hero-bottom { animation: emerge 700ms 220ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+/* --- Tarjetas apiladas (Saber hacer) ------------------------------------ */
+.stack-container { --stack-top: clamp(96px, 12vh, 132px); max-width: 1300px; margin: 0 auto; }
+.stack-slot { display: flex; justify-content: center; align-items: flex-start; height: 82vh; min-height: 460px; }
+.stack-card { position: sticky; width: 100%; transform-origin: top center; padding: clamp(26px, 3.4vw, 54px); border: 1px solid var(--hairline); border-radius: clamp(22px, 2.6vw, 38px); background: var(--ink); }
+.stack-card .timeline-item { padding: 0; border-bottom: 0; }
+
+/* --- Cinta guiada por el scroll ----------------------------------------- */
+.marquee-band--scroll { display: block; }
+.marquee-band--scroll .marquee-track { animation: none; gap: 28px; }
+
+@media (max-width: 860px) {
+  .stack-slot { height: auto; min-height: 0; margin-bottom: 16px; }
+  .stack-card { position: static; }
+  .marquee-band--scroll .marquee-track { gap: 20px; }
 }
-@keyframes emerge { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
 
 @media (max-width: 760px) {
@@ -216,7 +220,6 @@ a { color: inherit; text-decoration: none; }
   .hero-kicker { margin-bottom: 12px; font-size: 9px; }
   .hero-avatar-wrap { inset: 24% -18% 12%; min-height: 420px; }
   .avatar-stage { min-height: 420px; }
-  .avatar-stage__hint { bottom: 2%; }
   .hero-bottom { align-items: start; flex-direction: column; gap: 15px; }
   .hero-statement { max-width: 270px; font-size: 12px; }
   .hero-mark { position: absolute; right: 0; bottom: 3px; font-size: 8px; }
@@ -228,7 +231,7 @@ a { color: inherit; text-decoration: none; }
   .chapter-heading h2, .chapter--ser .chapter-heading h2, .chapter--hacer .chapter-heading h2 { font-size: clamp(80px, 20vw, 134px); text-align: left; }
   .section-label { font-size: 9px; }
   .ser-grid, .knowledge-intro, .hacer-hero { grid-template-columns: 1fr; gap: 34px; }
-  .pillar-image--ser { min-height: 400px; }
+  .pillar-image--ser { max-height: 620px; }
   .ser-content .chapter-lead, .knowledge-intro .chapter-lead { font-size: 29px; }
   .value-cards { margin-top: 35px; }
   .value-cards article { min-height: 128px; padding: 13px; }
@@ -236,7 +239,6 @@ a { color: inherit; text-decoration: none; }
   .value-cards strong { font-size: 15px; }
   .personal-video { min-height: 540px; margin-top: 75px; padding: 27px; align-items: start; flex-direction: column; }
   .personal-video h3 { font-size: 48px; }
-  .video-pending { margin-top: auto; font-size: 9px; }
   .knowledge-intro { margin-bottom: 52px; }
   .pillar-image--saber { min-height: 320px; }
   .knowledge-item { grid-template-columns: 43px 1fr; gap: 17px; }

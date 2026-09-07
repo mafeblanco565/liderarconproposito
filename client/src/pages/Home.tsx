@@ -6,7 +6,6 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
-  ChevronDown,
   ExternalLink,
   Linkedin,
   Mail,
@@ -14,12 +13,16 @@ import {
   Menu,
   MoveRight,
   Phone,
-  Play,
   Sparkles,
   X,
 } from "lucide-react";
 /** El motor 3D se carga aparte: no debe bloquear el primer pintado del hero. */
 const AvatarStage = lazy(() => import("@/components/AvatarStage"));
+import AnimatedText from "@/components/motion/AnimatedText";
+import FadeIn from "@/components/motion/FadeIn";
+import Magnet from "@/components/motion/Magnet";
+import ScrollMarquee from "@/components/motion/ScrollMarquee";
+import StackingCards from "@/components/motion/StackingCards";
 
 const links = [
   { label: "Saber ser", target: "saber-ser" },
@@ -157,49 +160,56 @@ export default function Home() {
         <div className="hero-noise" />
         <div className="hero-orbit hero-orbit--one" />
         <div className="hero-orbit hero-orbit--two" />
-        <div className="hero-topline">
+        <FadeIn className="hero-topline" delay={0} y={-20}>
           <p>Dirección comercial · Desarrollo de negocios</p>
-          <p>Bucaramanga, CO <span className="availability-dot" /> Disponible para conversar</p>
-        </div>
-        <div className="hero-title-wrap">
+        </FadeIn>
+        <FadeIn className="hero-title-wrap" delay={0.15} y={40}>
           <p className="hero-kicker"><Sparkles size={14} /> Mi portafolio personal</p>
           <h1 id="hero-title">MARÍA<br /><em>FERNANDA</em></h1>
-        </div>
+        </FadeIn>
         <div className="hero-avatar-wrap">
           <Suspense fallback={<div className="avatar-stage" aria-hidden="true" />}>
             <AvatarStage />
           </Suspense>
         </div>
         <div className="hero-bottom">
-          <p className="hero-statement">Conecto estrategia comercial, tecnología y relaciones de largo plazo para crear impacto medible.</p>
-          <button className="hero-scroll" onClick={() => scrollTo("saber-ser")}>
-            Explora mis tres saberes <ChevronDown size={18} />
-          </button>
+          <FadeIn as="p" className="hero-statement" delay={0.35} y={20}>
+            Conecto estrategia comercial, tecnología y relaciones de largo plazo para crear impacto medible.
+          </FadeIn>
           <p className="hero-mark">MFB <span>·</span> 2026</p>
         </div>
       </section>
 
-      <section className="marquee-band" aria-label="Conceptos que definen mi perfil">
-        <div className="marquee-track">
-          <span>ESTRATEGIA</span><i>✦</i><span>CONEXIÓN</span><i>✦</i><span>IMPACTO</span><i>✦</i><span>APRENDIZAJE</span><i>✦</i><span>LIDERAZGO</span><i>✦</i>
-          <span>ESTRATEGIA</span><i>✦</i><span>CONEXIÓN</span><i>✦</i><span>IMPACTO</span><i>✦</i><span>APRENDIZAJE</span><i>✦</i><span>LIDERAZGO</span><i>✦</i>
-        </div>
+      <section className="marquee-band marquee-band--scroll" aria-label="Conceptos que definen mi perfil">
+        <ScrollMarquee className="marquee-track" direction={-1} speed={0.3}>
+          {[0, 1, 2].map((copia) => (
+            <span className="marquee-group" key={copia}>
+              <span>ESTRATEGIA</span><i>✦</i><span>CONEXIÓN</span><i>✦</i><span>IMPACTO</span><i>✦</i><span>APRENDIZAJE</span><i>✦</i><span>LIDERAZGO</span><i>✦</i>
+            </span>
+          ))}
+        </ScrollMarquee>
       </section>
 
       <section id="saber-ser" className="chapter chapter--ser" aria-labelledby="ser-title">
-        <div className="chapter-heading">
+        <FadeIn className="chapter-heading" y={40}>
           <SectionLabel number="01" eyebrow="La esencia que guía mi camino" />
           <h2 id="ser-title">SABER<br /><em>SER</em></h2>
-        </div>
+        </FadeIn>
         <div className="ser-grid">
           <PillarImage className="pillar-image--ser" label="Composición abstracta que representa identidad y conexión" />
           <div className="ser-content">
-            <p className="chapter-lead">Creo en el poder de las relaciones que se construyen con escucha, intención y coherencia.</p>
+            <AnimatedText className="chapter-lead" text="Creo en el poder de las relaciones que se construyen con escucha, intención y coherencia." />
             <p>Mi trayectoria ha fortalecido una mirada cercana de los negocios: comprender a las personas, leer el contexto y transformar las oportunidades en vínculos de valor. Me mueve aprender continuamente, liderar con propósito y aportar a iniciativas que generan desarrollo para otros.</p>
             <div className="value-cards">
-              <article><span>Esencia</span><strong>Conexión<br />con propósito</strong></article>
-              <article><span>Me inspira</span><strong>El impacto<br />en la gente</strong></article>
-              <article><span>Me orienta</span><strong>Aprender<br />y evolucionar</strong></article>
+              {[
+                { label: "Esencia", title: <>Conexión<br />con propósito</> },
+                { label: "Me inspira", title: <>El impacto<br />en la gente</> },
+                { label: "Me orienta", title: <>Aprender<br />y evolucionar</> },
+              ].map((card, i) => (
+                <FadeIn as="article" key={card.label} delay={i * 0.1} y={24}>
+                  <span>{card.label}</span><strong>{card.title}</strong>
+                </FadeIn>
+              ))}
             </div>
           </div>
         </div>
@@ -210,26 +220,25 @@ export default function Home() {
             <h3>UNA MIRADA MÁS<br />CERCA DE MÍ</h3>
             <p>Este espacio está preparado para compartir, en primera persona, mi historia, mis motivaciones y las experiencias que nutren mi manera de estar en el mundo.</p>
           </div>
-          <span className="video-pending"><Play size={17} fill="currentColor" /> Próxima integración de video</span>
         </div>
       </section>
 
       <section id="saber-saber" className="chapter chapter--saber" aria-labelledby="saber-title">
-        <div className="chapter-heading chapter-heading--right">
+        <FadeIn className="chapter-heading chapter-heading--right" y={40}>
           <SectionLabel number="02" eyebrow="Conocimiento que se convierte en acción" />
           <h2 id="saber-title">SABER<br /><em>SABER</em></h2>
-        </div>
+        </FadeIn>
         <div className="knowledge-intro">
           <PillarImage className="pillar-image--saber" label="Composición abstracta que representa aprendizaje y conocimiento" />
-          <p className="chapter-lead">La formación es más valiosa cuando amplía la capacidad de entender, decidir y crear mejores soluciones.</p>
+          <AnimatedText className="chapter-lead" text="La formación es más valiosa cuando amplía la capacidad de entender, decidir y crear mejores soluciones." />
         </div>
         <div className="knowledge-list">
-          {knowledge.map((item) => (
-            <article className="knowledge-item" key={item.number}>
+          {knowledge.map((item, i) => (
+            <FadeIn as="article" className="knowledge-item" key={item.number} delay={i * 0.1}>
               <span className="knowledge-number">{item.number}</span>
               <div><h3>{item.title}</h3><p>{item.text}</p></div>
               <ArrowDownRight className="knowledge-arrow" size={24} />
-            </article>
+            </FadeIn>
           ))}
         </div>
         <div className="tool-cloud" aria-label="Competencias y herramientas">
@@ -239,15 +248,15 @@ export default function Home() {
       </section>
 
       <section id="saber-hacer" className="chapter chapter--hacer" aria-labelledby="hacer-title">
-        <div className="chapter-heading">
+        <FadeIn className="chapter-heading" y={40}>
           <SectionLabel number="03" eyebrow="Experiencia que deja huella" />
           <h2 id="hacer-title">SABER<br /><em>HACER</em></h2>
-        </div>
+        </FadeIn>
         <div className="hacer-hero">
           <PillarImage className="pillar-image--hacer" label="Composición abstracta que representa ejecución e impacto profesional" />
           <div className="hacer-hero__quote"><span>+10</span><p>Años de trayectoria comercial, construyendo estrategias sostenibles entre negocios, personas y oportunidades.</p></div>
         </div>
-        <div className="timeline">
+        <StackingCards>
           {roles.map((role) => (
             <article className="timeline-item" key={role.company}>
               <span className="timeline-period">{role.period}</span>
@@ -255,7 +264,7 @@ export default function Home() {
               <p className="timeline-description">{role.description}</p>
             </article>
           ))}
-        </div>
+        </StackingCards>
         <div className="impact-grid">
           <article className="impact-card impact-card--achievement">
             <span className="card-label">Logro destacado</span>
@@ -280,7 +289,9 @@ export default function Home() {
         <div className="footer-topline"><span>¿Hablamos?</span><i /></div>
         <div className="footer-main">
           <div><p className="footer-overline">Hagamos que las oportunidades</p><h2>SE VUELVAN<br /><em>IMPACTO.</em></h2></div>
-          <a className="contact-orb" href="mailto:mafeblanco5@gmail.com" aria-label="Enviar correo a María Fernanda Blanco"><MoveRight size={37} /></a>
+          <Magnet padding={140} strength={3}>
+            <a className="contact-orb" href="mailto:mafeblanco5@gmail.com" aria-label="Enviar correo a María Fernanda Blanco"><MoveRight size={37} /></a>
+          </Magnet>
         </div>
         <div className="footer-details">
           <a href="mailto:mafeblanco5@gmail.com"><Mail size={17} /> mafeblanco5@gmail.com</a>

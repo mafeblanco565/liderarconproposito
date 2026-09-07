@@ -155,9 +155,6 @@ export default function AvatarStage() {
           />
         </Suspense>
       </Canvas>
-      <div className="avatar-stage__hint" aria-hidden="true">
-        <span /> mueve el cursor
-      </div>
     </div>
   );
 }
