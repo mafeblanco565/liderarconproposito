@@ -12,7 +12,7 @@ import {
   MapPin,
   Menu,
   MoveRight,
-  Phone,
+  MessageCircle,
   X,
 } from "lucide-react";
 import HeroLoop from "@/components/HeroLoop";
@@ -324,12 +324,12 @@ export default function Home() {
         <div className="footer-main">
           <div><p className="footer-overline">Hagamos que las oportunidades</p><h2>SE VUELVAN<br /><em>IMPACTO.</em></h2></div>
           <Magnet padding={140} strength={3}>
-            <a className="contact-orb" href="mailto:mafeblanco5@gmail.com" aria-label="Enviar correo a María Fernanda Blanco"><MoveRight size={37} /></a>
+            <a className="contact-orb" href="https://wa.me/573008615282" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp a María Fernanda Blanco"><MoveRight size={37} /></a>
           </Magnet>
         </div>
         <div className="footer-details">
           <a href="mailto:mafeblanco5@gmail.com"><Mail size={17} /> mafeblanco5@gmail.com</a>
-          <a href="tel:+573008615282"><Phone size={17} /> +57 300 861 5282</a>
+          <a href="https://wa.me/573008615282" target="_blank" rel="noreferrer"><MessageCircle size={17} /> +57 300 861 5282 <ExternalLink size={14} /></a>
           <span><MapPin size={17} /> Bucaramanga, Santander</span>
           <a href="https://www.linkedin.com/in/mariablanco-comercialymarketing" target="_blank" rel="noreferrer"><Linkedin size={17} /> LinkedIn <ExternalLink size={14} /></a>
         </div>
