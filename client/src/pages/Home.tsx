@@ -65,32 +65,68 @@ const tools = [
 
 const roles = [
   {
-    period: "2026 — Hoy",
-    company: "Multicop / Multitech",
+    period: "Mar 2026 — Actualidad",
+    location: "Bucaramanga",
+    company: "Multicómputo · Multitech",
     role: "Directora Comercial de Alianzas Empresariales",
-    description:
-      "Lidero alianzas B2G con entidades públicas para programas de formación técnica y empleabilidad. Diseño propuestas corporativas B2B a la medida y estructuro proyectos con foco en ODS, viabilidad financiera y retorno social.",
+    bullets: [
+      "Lidero la gestión de alianzas estratégicas B2G con entidades públicas para estructurar programas de formación técnica que impulsan la empleabilidad y el desarrollo social en poblaciones clave.",
+      "Diseño y comercializo programas de formación corporativa a la medida (B2B), incluyendo rutas de capacitación en inteligencia artificial, charlas y talleres cortos.",
+      "Estructuro proyectos que integran la formación técnica laboral con los Objetivos de Desarrollo Sostenible (ODS), asegurando viabilidad financiera y retorno social.",
+    ],
   },
   {
-    period: "2025 — 2026",
-    company: "Campuslands",
-    role: "Directora Comercial · Camper País",
-    description:
-      "Dirigí la atracción de aliados privados para formación en desarrollo de software e IA, articulando empresas, fundaciones y territorios mediante propuestas B2B con impacto medible.",
+    period: "Mar 2025 — Mar 2026",
+    location: "Bucaramanga",
+    company: "Camper País · Campuslands",
+    role: "Directora Comercial",
+    bullets: [
+      "Construí y lideré la estrategia de atracción de aliados privados para patrocinar formación en desarrollo de software e IA, articulando empresas, fundaciones y territorios bajo marcos de beneficios tributarios e impacto social.",
+      "Diseñé propuestas comerciales B2B con impacto medible y establecí relaciones con C-Level executives y fundaciones empresariales.",
+      "Consolidé acuerdos de empleabilidad y cuota SENA (lectiva y productiva) y articulé proyectos de software a la medida con viabilidad financiera y alcance técnico.",
+    ],
   },
   {
-    period: "2020 — 2024",
-    company: "Inversiones Álvarez S.A.S. / Franquicia Don Jacobo",
+    period: "Nov 2020 — Jul 2024",
+    location: "Barranquilla",
+    company: "Inversiones Álvarez SAS · Franquicia Don Jacobo",
     role: "Directora Comercial y Administradora",
-    description:
-      "Coordiné las áreas comercial y de marketing, gestioné proveedores y diseñé campañas alineadas a objetivos estratégicos. El trabajo permitió aumentar las ventas anuales de forma sostenida y recuperar el posicionamiento de la franquicia.",
+    bullets: [
+      "Dirigí las áreas comercial y de marketing con campañas alineadas a objetivos estratégicos, gestión de proveedores y decisiones financieras.",
+      "Incrementé las ventas anuales de forma sostenida (+15-20%, 2020-2024) estandarizando procesos comerciales y mejorando el embudo de conversión.",
+      "Lideré la reapertura y reposicionamiento de la franquicia, recuperando cuota de mercado; las campañas estacionales generaron picos de +100% en ventas.",
+    ],
   },
   {
-    period: "2016 — 2024",
-    company: "Otros hitos comerciales",
-    role: "Industria de Alimentos Don Jacobo · Servimeters · Fénix Construcciones",
-    description:
-      "Experiencia en dirección comercial y de marketing nacional, apertura de cuentas B2B/B2C, liderazgo de equipos de hasta 70 personas y cierre de negocios en los sectores de alimentos, infraestructura e inmobiliario.",
+    period: "Ago 2022 — Ene 2024",
+    location: "Bucaramanga",
+    company: "Industria de Alimentos Don Jacobo",
+    role: "Directora Comercial y de Marketing Nacional",
+    bullets: [
+      "Dirigí, capacité y evalué un equipo comercial de 70 personas (líderes de zona, fuerza de ventas presencial, call center y marketing), con planeación trimestral basada en KPIs.",
+      "Superé las metas de ventas en 15% (2022-2023) e implementé estrategias de co-branding y productos de temporada a partir de análisis de tendencias de consumo.",
+      "Reduje el índice de PQRS en 30% con programas de bienestar del equipo y elevé la conversión telefónica en 20% mediante reingeniería del call center y canales digitales.",
+    ],
+  },
+  {
+    period: "Feb 2019 — Nov 2019",
+    location: "Bucaramanga",
+    company: "Servimeters SAS",
+    role: "Ejecutiva Comercial",
+    bullets: [
+      "Apertura de cuentas clave B2B/B2C para certificaciones bajo normas RETIE y RETILAP en proyectos de infraestructura, con prospección técnica en obra.",
+      "Elaboración de cotizaciones técnicas según el marco normativo vigente y gestión integral del cierre de negocios y recaudo de cartera.",
+    ],
+  },
+  {
+    period: "Feb 2016 — Jun 2018",
+    location: "Bucaramanga",
+    company: "Fénix Construcciones SAS",
+    role: "Ejecutiva Comercial Senior",
+    bullets: [
+      "Gerencia de sala de ventas para proyectos inmobiliarios de alto impacto y asesoría financiera integral (créditos hipotecarios, leasing habitacional y subsidios de vivienda).",
+      "Ventas superiores a $1.200 millones mensuales con cierre de propiedades de alto valor en el sector inmobiliario de lujo.",
+    ],
   },
 ];
 
@@ -254,10 +290,12 @@ export default function Home() {
         </div>
         <StackingCards>
           {roles.map((role) => (
-            <article className="timeline-item" key={role.company}>
-              <span className="timeline-period">{role.period}</span>
+            <article className="timeline-item" key={`${role.company}-${role.period}`}>
+              <span className="timeline-period">{role.period}<i>{role.location}</i></span>
               <div className="timeline-main"><p className="timeline-company">{role.company}</p><h3>{role.role}</h3></div>
-              <p className="timeline-description">{role.description}</p>
+              <ul className="timeline-bullets">
+                {role.bullets.map((punto) => <li key={punto}>{punto}</li>)}
+              </ul>
             </article>
           ))}
         </StackingCards>

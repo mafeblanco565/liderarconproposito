@@ -122,7 +122,7 @@ a { color: inherit; text-decoration: none; }
 .pillar-image--hacer { aspect-ratio: 1284 / 2282; max-height: 920px; background-image: linear-gradient(135deg, rgba(12, 14, 16, 0.04), rgba(12, 14, 16, 0.34)), url("/assets/saber-hacer.webp"); }
 .ser-content { max-width: 560px; }
 .chapter-lead { margin: 0 0 28px; color: var(--fog); font: 500 clamp(28px, 3.1vw, 49px)/1.15 "Kanit", sans-serif; letter-spacing: -0.035em; }
-.ser-content > p:not(.chapter-lead), .knowledge-item p, .timeline-description, .impact-card p { margin: 0; color: #b9c6c8; font: 400 clamp(14px, 1.08vw, 17px)/1.75 "Manrope", sans-serif; }
+.ser-content > p:not(.chapter-lead), .knowledge-item p, .timeline-bullets li, .impact-card p { margin: 0; color: #b9c6c8; font: 400 clamp(14px, 1.08vw, 17px)/1.75 "Manrope", sans-serif; }
 .value-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 52px; background: var(--hairline); border: 1px solid var(--hairline); }
 .value-cards article { min-height: 154px; padding: 18px; background: var(--ink); }
 .value-cards span, .card-label, .video-label, .tool-cloud__label, .footer-overline { display: block; margin-bottom: 28px; color: var(--mineral); font: 500 10px/1 "Kanit", sans-serif; letter-spacing: 0.13em; text-transform: uppercase; }
@@ -159,6 +159,10 @@ a { color: inherit; text-decoration: none; }
 .timeline { max-width: 1300px; margin: 0 auto; border-top: 1px solid var(--hairline); }
 .timeline-item { display: grid; grid-template-columns: 0.4fr 1fr 1.02fr; gap: clamp(22px, 4vw, 72px); padding: clamp(28px, 3.8vw, 56px) 0; border-bottom: 1px solid var(--hairline); }
 .timeline-period, .timeline-company { margin: 0; color: var(--mineral); font: 500 clamp(11px, 0.9vw, 14px)/1.25 "Kanit", sans-serif; letter-spacing: 0.09em; text-transform: uppercase; }
+.timeline-period i { display: block; margin-top: 6px; color: #8fa3a6; font-style: normal; letter-spacing: 0.08em; }
+.timeline-bullets { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.1vw, 16px); }
+.timeline-bullets li { position: relative; padding-left: 19px; }
+.timeline-bullets li::before { content: ""; position: absolute; top: 0.72em; left: 0; width: 6px; height: 1px; background: var(--mineral); }
 .timeline-main h3 { margin: 7px 0 0; color: var(--fog); font: 600 clamp(21px, 2.1vw, 34px)/1.08 "Kanit", sans-serif; letter-spacing: -0.04em; }
 .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; max-width: 1300px; margin: clamp(84px, 11vw, 160px) auto 0; background: var(--hairline); border: 1px solid var(--hairline); }
 .impact-card { min-height: 490px; display: flex; flex-direction: column; padding: clamp(27px, 4.2vw, 65px); background: #182021; }
@@ -225,7 +229,7 @@ a { color: inherit; text-decoration: none; }
 
 /* --- Tarjetas apiladas (Saber hacer) ------------------------------------ */
 .stack-container { --stack-top: clamp(96px, 12vh, 132px); max-width: 1300px; margin: 0 auto; }
-.stack-slot { display: flex; justify-content: center; align-items: flex-start; height: 82vh; min-height: 460px; }
+.stack-slot { display: flex; justify-content: center; align-items: flex-start; height: 68vh; min-height: 430px; }
 .stack-card { position: sticky; width: 100%; transform-origin: top center; padding: clamp(26px, 3.4vw, 54px); border: 1px solid var(--hairline); border-radius: clamp(22px, 2.6vw, 38px); background: var(--ink); }
 .stack-card .timeline-item { padding: 0; border-bottom: 0; }
 
@@ -288,7 +292,7 @@ a { color: inherit; text-decoration: none; }
   .hacer-hero__quote span { font-size: 125px; }
   .hacer-hero__quote p { font-size: 23px; }
   .timeline-item { grid-template-columns: 1fr; gap: 11px; }
-  .timeline-description { font-size: 13.5px; }
+  .timeline-bullets li { font-size: 13.5px; padding-left: 15px; }
   .timeline-main h3 { font-size: 24px; }
   .impact-grid { grid-template-columns: 1fr; margin-top: 80px; }
   .impact-card { min-height: 420px; padding: 30px 24px; }
