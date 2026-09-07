@@ -335,7 +335,7 @@ export default function Home() {
         </div>
         <div className="competencies">
           <p>Fortalezas que he desarrollado</p>
-          <div><span>01 · Liderazgo comercial y desarrollo de equipos</span><span>02 · Alianzas y negociación estratégica</span><span>03 · Innovación</span></div>
+          <div><span>01 · Liderazgo comercial y desarrollo de equipos</span><span>02 · Alianzas y negociación estratégica</span><span>03 · Mentalidad innovadora</span></div>
         </div>
       </section>
 
