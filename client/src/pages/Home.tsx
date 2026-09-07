@@ -58,8 +58,8 @@ const tools = [
   "Capacitación de equipos",
   "Visual Studio Code",
   "GitHub",
-  "Lovable",
-  "v0 / Vercel",
+  "Claude Code",
+  "Vercel",
   "n8n",
 ];
 
