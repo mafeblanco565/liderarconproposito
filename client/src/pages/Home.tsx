@@ -175,7 +175,7 @@ export default function Home() {
         </div>
         <div className="hero-bottom">
           <FadeIn as="p" className="hero-statement" delay={0.35} y={20}>
-            Conecto estrategia comercial, tecnología y relaciones de largo plazo para crear impacto medible.
+            Conecto estrategia comercial, tecnología y relaciones de largo plazo para generar impacto.
           </FadeIn>
           <p className="hero-mark">MFB <span>·</span> 2026</p>
         </div>
