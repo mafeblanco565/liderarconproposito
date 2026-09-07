@@ -302,14 +302,14 @@ export default function Home() {
         <div className="impact-grid">
           <article className="impact-card impact-card--achievement">
             <span className="card-label">Logro destacado</span>
-            <strong>+15–20<span>%</span></strong>
+            <strong>+20<span>%</span></strong>
             <p>Incremento sostenido de ventas anuales entre 2020 y 2024, mediante la estandarización de procesos comerciales y una operación alineada a objetivos estratégicos.</p>
             <div className="impact-card__footer">También se alcanzó <b>+100 %</b> en ventas con campañas estacionales.</div>
           </article>
           <article className="impact-card impact-card--challenge">
             <span className="card-label">Reto que transformó</span>
             <h3>REABRIR,<br />REPOSICIONAR,<br />RECONECTAR.</h3>
-            <p>Ante el desafío de reabrir y reposicionar una franquicia, coordiné la gestión comercial y de marketing, reforcé campañas estacionales y organicé procesos para recuperar presencia en el mercado.</p>
+            <p>Ante el desafío de reabrir y reposicionar primero una franquicia y después Don Jacobo nacional, coordiné la gestión comercial y de marketing, reforcé campañas estacionales de la mano con proveedores y recuperé presencia en el mercado, tanto digital como presencial.</p>
             <div className="impact-card__footer">El impacto: recuperación de cuota de mercado y un nuevo impulso comercial.</div>
           </article>
         </div>
