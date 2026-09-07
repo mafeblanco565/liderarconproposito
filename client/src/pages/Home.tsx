@@ -130,7 +130,7 @@ export default function Home() {
     <main className="portfolio-shell">
       <header className={`site-header ${scrolled ? "site-header--solid" : ""}`}>
         <button className="brand-lockup" onClick={() => scrollTo("inicio")} aria-label="Volver al inicio">
-          <img src="/assets/mfb-monogram.webp" alt="Símbolo de María Fernanda Blanco" />
+          <img src="/assets/avatar-logo.webp" alt="Avatar de María Fernanda Blanco" />
           <span>María Fernanda<br />Blanco</span>
         </button>
 

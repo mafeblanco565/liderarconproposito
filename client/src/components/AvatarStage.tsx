@@ -53,7 +53,7 @@ function Model({ reducedMotion }: { reducedMotion: boolean }) {
   }, [model]);
 
   useFrame((_, delta) => {
-    if (!root.current || reducedMotion) return;
+    if (!root.current) return;
     // `delta` se acota para que un frame perdido no dispare un giro brusco.
     const step = Math.min(delta, 0.1);
     root.current.rotation.y = THREE.MathUtils.damp(
@@ -104,7 +104,7 @@ export default function AvatarStage() {
   const [visible, setVisible] = useState(true);
   const [reducedMotion, setReducedMotion] = useState(false);
 
-  usePointerTracking(visible && !reducedMotion);
+  usePointerTracking(visible);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
