@@ -33,8 +33,8 @@ const links = [
 const knowledge = [
   {
     number: "01",
-    title: "Formación con propósito",
-    text: "Profesional en Finanzas y Negocios Internacionales por la Universidad de Manizales. Complemento mi formación con un diplomado en Gerencia de Proyectos, Seminario de Alta Gerencia y Análisis de Datos con Python.",
+    title: "Formación",
+    text: "Profesional en Finanzas y Negocios Internacionales por la Universidad de Manizales. Complementarios en un diplomado en Gerencia de Proyectos, Seminario de Alta Gerencia y Curso certificado de Análisis de Datos con Python, adicional autodidacta con más de 200 horas aprendiendo inteligencia artificial.",
   },
   {
     number: "02",
