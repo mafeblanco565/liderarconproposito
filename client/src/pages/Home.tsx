@@ -328,7 +328,7 @@ export default function Home() {
             <span className="card-label">Reto que transformó</span>
             <h3>REABRIR,<br />REPOSICIONAR,<br />RECONECTAR.</h3>
             <p>Ante el desafío de reabrir y reposicionar con bajo presupuesto la marca Don Jacobo, primero una franquicia nueva y después todos los puntos a nivel nacional, dirigí la gestión comercial y de marketing, reforzando campañas estacionales de la mano con proveedores (gana-gana) y recuperando presencia en el mercado, tanto digital como presencial, hasta lograr el punto de equilibrio.</p>
-            <div className="impact-card__footer">El impacto: recuperación de cuota de mercado y un nuevo impulso comercial.</div>
+            <div className="impact-card__footer">El impacto: recuperación de cuota de mercado y un nuevo impulso comercial bajo la metodología <b>«Behinder»</b>: dar valor a empleados y líderes para que alcancen sus objetivos personales y profesionales, y que eso se traduzca en resultados; en este caso, ventas.</div>
           </article>
         </div>
         <div className="competencies">
