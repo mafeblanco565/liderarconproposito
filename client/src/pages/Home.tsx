@@ -44,7 +44,7 @@ const knowledge = [
   {
     number: "03",
     title: "Herramientas e idioma",
-    text: "Trabajo con CRM, Visual Studio Code, GitHub, Lovable, v0/Vercel y n8n en nivel básico–intermedio. Cuento con inglés B1 intermedio para desenvolverme en contextos de aprendizaje y colaboración.",
+    text: "Trabajo con CRM, Visual Studio Code, GitHub, Claude Code y n8n. Cuento con inglés B1 intermedio para desenvolverme en contextos de aprendizaje y colaboración.",
   },
 ];
 
