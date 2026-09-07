@@ -68,6 +68,7 @@ const roles = [
     period: "Mar 2026 — Actualidad",
     location: "Bucaramanga",
     company: "Multicómputo · Multitech",
+    sector: "Educación",
     team: "3",
     role: "Directora Comercial de Alianzas Empresariales",
     bullets: [
@@ -80,6 +81,7 @@ const roles = [
     period: "Mar 2025 — Mar 2026",
     location: "Bucaramanga",
     company: "Camper País · Campuslands",
+    sector: "Educación y tecnología",
     team: "1",
     role: "Directora Comercial",
     bullets: [
@@ -92,6 +94,7 @@ const roles = [
     period: "Nov 2020 — Jul 2024",
     location: "Barranquilla",
     company: "Inversiones Álvarez SAS · Franquicia Don Jacobo",
+    sector: "Retail · Alimentos",
     team: "6",
     role: "Directora Comercial y Administradora",
     bullets: [
@@ -104,6 +107,7 @@ const roles = [
     period: "Ago 2022 — Ene 2024",
     location: "Bucaramanga",
     company: "Industria de Alimentos Don Jacobo",
+    sector: "Retail · Alimentos",
     team: "70",
     role: "Directora Comercial y de Marketing Nacional",
     bullets: [
@@ -116,6 +120,7 @@ const roles = [
     period: "Feb 2019 — Nov 2019",
     location: "Bucaramanga",
     company: "Servimeters SAS",
+    sector: "Construcción",
     role: "Ejecutiva Comercial",
     bullets: [
       "Apertura de cuentas clave B2B/B2C para certificaciones bajo normas RETIE y RETILAP en proyectos de infraestructura, con prospección técnica en obra.",
@@ -126,6 +131,7 @@ const roles = [
     period: "Feb 2016 — Jun 2018",
     location: "Bucaramanga",
     company: "Fénix Construcciones SAS",
+    sector: "Inmobiliario · Construcción",
     role: "Ejecutiva Comercial Senior",
     bullets: [
       "Gerencia de sala de ventas para proyectos inmobiliarios de alto impacto y asesoría financiera integral (créditos hipotecarios, leasing habitacional y subsidios de vivienda).",
@@ -300,7 +306,11 @@ export default function Home() {
                 {/* Solo se muestra en los cargos con equipo a cargo declarado. */}
                 {role.team && <b className="timeline-team">Personas a cargo<em>{role.team}</em></b>}
               </span>
-              <div className="timeline-main"><p className="timeline-company">{role.company}</p><h3>{role.role}</h3></div>
+              <div className="timeline-main">
+                <p className="timeline-company">{role.company}</p>
+                <h3>{role.role}</h3>
+                <p className="timeline-sector">{role.sector}</p>
+              </div>
               <ul className="timeline-bullets">
                 {role.bullets.map((punto) => <li key={punto}>{punto}</li>)}
               </ul>
