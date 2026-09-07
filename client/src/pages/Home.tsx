@@ -308,8 +308,8 @@ export default function Home() {
               </span>
               <div className="timeline-main">
                 <p className="timeline-company">{role.company}</p>
+                <p className="timeline-sector">Sector: {role.sector}</p>
                 <h3>{role.role}</h3>
-                <p className="timeline-sector">{role.sector}</p>
               </div>
               <ul className="timeline-bullets">
                 {role.bullets.map((punto) => <li key={punto}>{punto}</li>)}
