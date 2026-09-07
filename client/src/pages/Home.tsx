@@ -92,6 +92,7 @@ const roles = [
     period: "Nov 2020 — Jul 2024",
     location: "Barranquilla",
     company: "Inversiones Álvarez SAS · Franquicia Don Jacobo",
+    team: "6",
     role: "Directora Comercial y Administradora",
     bullets: [
       "Dirigí las áreas comercial y de marketing con campañas alineadas a objetivos estratégicos, gestión de proveedores y decisiones financieras.",
